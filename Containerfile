@@ -7,6 +7,7 @@ RUN curl -o /etc/yum.repos.d/msprod.repo https://packages.microsoft.com/config/r
  && rm -rf /var/cache/dnf \
  && rm -rf /tmp/*
 
+# Patch from https://github.com/containers/toolbox/issues/235
 COPY 0_file_cache /etc/krb5.conf.d/0_file_ccache
 
 #USER 1001
