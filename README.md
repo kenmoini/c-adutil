@@ -25,4 +25,13 @@ podman run --rm -it -v "$(pwd)/ad-gen:/tmp/ad-gen:Z" quay.io/kenmoini/adutil adu
 
 # Run the container, local build
 podman run --rm -it -v "$(pwd)/ad-gen:/tmp/ad-gen:Z" adutil adutil --help
+
+# Run the container, interactively
+podman run --rm -it -v "$(pwd)/ad-gen:/tmp/ad-gen:Z" quay.io/kenmoini/adutil:latest /bin/bash
 ```
+
+## Hints
+
+- When performaing a `kinit` make sure the domain/realm is in all capital letters.
+- Likely need to set a HOME path `export HOME=/tmp/ad-gen/`
+- *I honestly haven't gotten this to work right yet...*
